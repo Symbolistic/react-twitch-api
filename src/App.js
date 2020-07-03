@@ -16,7 +16,6 @@ function App() {
       );
   
       setStreamerData(data);
-      console.log(streamerData);
     })()
   }, [])
 
@@ -26,7 +25,6 @@ function App() {
       <div id="streamers">
       {(streamerData.length > 0) ? (
               streamerData.map((val) => {
-                console.log(val)
                 if (val.stream === null) {
                   const channelName = val._links.channel.split('/')
                   return (
@@ -38,7 +36,6 @@ function App() {
                   );
                 } else {
                   const channelName = val._links.channel.split('/')
-                  console.log(`https://www.twitch.tv/${channelName[5]}`)
                   return (
                     <a key={channelName+1} className="results" href={`https://www.twitch.tv/${channelName[5]}`} target="_blank" rel="noopener noreferrer"  >
                       <div>
